@@ -1,0 +1,436 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Src/Fonts/title_font_big.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Src/Fonts/Heebo-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Src/Themes/theme.tres" type="Theme" id=3]
+[ext_resource path="res://Src/Themes/button_menu.tres" type="Theme" id=4]
+[ext_resource path="res://Menu/EscMenu/EscMenu.gd" type="Script" id=5]
+[ext_resource path="res://Src/Fonts/default_font.tres" type="DynamicFont" id=6]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.84058, 0.992754, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.145707, 0.145707, 0.145707, 0.324447, 0.160983, 0.160983, 0.160983, 0.253623, 0.215686, 0.215686, 0.215686, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = SubResource( 2 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.156863, 0.258824, 0.313726, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0941176, 0.184314, 0.231373, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.384314, 0.756863, 0.266667, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.196078, 0.568627, 0.0784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.196078, 0.568627, 0.0784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.513726, 0.137255, 0.137255, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="EscMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 250, 0 )
+theme = ExtResource( 3 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BgrGradient" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.784314 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.205383
+margin_bottom = -0.205383
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Version" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -138.524
+margin_top = -29.728
+margin_right = -9.52368
+margin_bottom = -5.72803
+custom_fonts/font = ExtResource( 6 )
+text = "0.1.0 Early Access"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_bottom = 1.0
+margin_left = 80.0
+margin_right = 328.0
+rect_min_size = Vector2( 230, 0 )
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
+margin_right = 248.0
+margin_bottom = 27.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 27.0
+margin_right = 248.0
+margin_bottom = 164.0
+custom_fonts/font = ExtResource( 1 )
+custom_constants/line_spacing = -25
+text = "Project
+       aim"
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="VBoxContainer"]
+margin_top = 164.0
+margin_right = 248.0
+margin_bottom = 194.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="Panel_Highscore" type="Panel" parent="VBoxContainer"]
+margin_top = 194.0
+margin_right = 248.0
+margin_bottom = 334.0
+rect_min_size = Vector2( 0, 140 )
+custom_styles/panel = SubResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Panel_Highscore"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel_Highscore/VBoxContainer"]
+margin_right = 228.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 5 )
+text = "Your Best Score"
+align = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/Panel_Highscore/VBoxContainer"]
+margin_top = 28.0
+margin_right = 228.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 0, 3 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Panel_Highscore/VBoxContainer"]
+margin_top = 35.0
+margin_right = 228.0
+margin_bottom = 61.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel_Highscore/VBoxContainer/HBoxContainer2"]
+margin_top = 1.0
+margin_right = 112.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+text = "Score"
+
+[node name="LineEdit_Score" type="LineEdit" parent="VBoxContainer/Panel_Highscore/VBoxContainer/HBoxContainer2"]
+margin_left = 116.0
+margin_right = 228.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_styles/read_only = SubResource( 6 )
+text = "0"
+align = 1
+editable = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/Panel_Highscore/VBoxContainer"]
+margin_top = 65.0
+margin_right = 228.0
+margin_bottom = 91.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel_Highscore/VBoxContainer/HBoxContainer3"]
+margin_top = 1.0
+margin_right = 112.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+text = "Accuracy (%)"
+
+[node name="LineEdit_Accuracy" type="LineEdit" parent="VBoxContainer/Panel_Highscore/VBoxContainer/HBoxContainer3"]
+margin_left = 116.0
+margin_right = 228.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_styles/read_only = SubResource( 6 )
+text = "0"
+align = 1
+editable = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel_Highscore/VBoxContainer"]
+margin_top = 95.0
+margin_right = 228.0
+margin_bottom = 121.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel_Highscore/VBoxContainer/HBoxContainer"]
+margin_top = 1.0
+margin_right = 112.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+text = "Avg TTK (ms)"
+
+[node name="LineEdit_AvgTTK" type="LineEdit" parent="VBoxContainer/Panel_Highscore/VBoxContainer/HBoxContainer"]
+margin_left = 116.0
+margin_right = 228.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_styles/read_only = SubResource( 6 )
+text = "-"
+align = 1
+editable = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="Button_Share" type="Button" parent="VBoxContainer/Panel_Highscore/VBoxContainer"]
+visible = false
+margin_top = 118.0
+margin_right = 228.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_horizontal = 3
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+custom_colors/font_color = Color( 0.980392, 0.980392, 0.980392, 1 )
+custom_colors/font_color_hover = Color( 0.980392, 0.980392, 0.980392, 1 )
+custom_colors/font_color_pressed = Color( 0.980392, 0.980392, 0.980392, 1 )
+text = "Share"
+
+[node name="Panel_NewHighscore" type="Panel" parent="VBoxContainer/Panel_Highscore"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -31.8271
+margin_top = -11.3838
+margin_right = 21.1729
+margin_bottom = 17.6162
+custom_styles/panel = SubResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel_Highscore/Panel_NewHighscore"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "NEW"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel_Score" type="Panel" parent="VBoxContainer/Panel_Highscore"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 27.2839
+margin_top = 1.18921
+margin_right = 275.284
+margin_bottom = 171.189
+rect_min_size = Vector2( 0, 170 )
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Panel_Highscore/Panel_Score"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer"]
+margin_right = 228.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 5 )
+text = "Current Session"
+align = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer"]
+margin_top = 28.0
+margin_right = 228.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 0, 3 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer"]
+margin_top = 35.0
+margin_right = 228.0
+margin_bottom = 61.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer/HBoxContainer2"]
+margin_top = 1.0
+margin_right = 112.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+text = "Score"
+
+[node name="LineEdit_Score" type="LineEdit" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer/HBoxContainer2"]
+margin_left = 116.0
+margin_right = 228.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_styles/read_only = SubResource( 6 )
+text = "0"
+align = 1
+editable = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer"]
+margin_top = 65.0
+margin_right = 228.0
+margin_bottom = 91.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer/HBoxContainer3"]
+margin_top = 1.0
+margin_right = 112.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+text = "Accuracy (%)"
+
+[node name="LineEdit_Accuracy" type="LineEdit" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer/HBoxContainer3"]
+margin_left = 116.0
+margin_right = 228.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_styles/read_only = SubResource( 6 )
+text = "0"
+align = 1
+editable = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer"]
+margin_top = 95.0
+margin_right = 228.0
+margin_bottom = 121.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer/HBoxContainer"]
+margin_top = 1.0
+margin_right = 112.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+text = "Kill / Second"
+
+[node name="LineEdit_KPS" type="LineEdit" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer/HBoxContainer"]
+margin_left = 116.0
+margin_right = 228.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_styles/read_only = SubResource( 6 )
+text = "0"
+align = 1
+editable = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer"]
+margin_top = 125.0
+margin_right = 228.0
+margin_bottom = 151.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer/HBoxContainer4"]
+margin_top = 1.0
+margin_right = 112.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+text = "Avg TTK (ms)"
+
+[node name="LineEdit_AvgTTK" type="LineEdit" parent="VBoxContainer/Panel_Highscore/Panel_Score/VBoxContainer/HBoxContainer4"]
+margin_left = 116.0
+margin_right = 228.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_styles/read_only = SubResource( 6 )
+text = "-"
+align = 1
+editable = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="VBoxContainer"]
+margin_top = 334.0
+margin_right = 248.0
+margin_bottom = 364.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="Button_Return" type="Button" parent="VBoxContainer"]
+margin_top = 364.0
+margin_right = 248.0
+margin_bottom = 416.0
+theme = ExtResource( 4 )
+text = "Return"
+align = 0
+
+[node name="Button_Restart" type="Button" parent="VBoxContainer"]
+margin_top = 416.0
+margin_right = 248.0
+margin_bottom = 468.0
+theme = ExtResource( 4 )
+text = "Restart"
+align = 0
+
+[node name="Button_Settings" type="Button" parent="VBoxContainer"]
+margin_top = 468.0
+margin_right = 248.0
+margin_bottom = 520.0
+theme = ExtResource( 4 )
+text = "Settings"
+align = 0
+
+[node name="Button_Leave" type="Button" parent="VBoxContainer"]
+margin_top = 520.0
+margin_right = 248.0
+margin_bottom = 572.0
+theme = ExtResource( 4 )
+text = "Exit Game"
+align = 0
+
+[node name="HSplitContainer4" type="HSplitContainer" parent="VBoxContainer"]
+margin_top = 572.0
+margin_right = 248.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+
+[connection signal="pressed" from="VBoxContainer/Button_Return" to="." method="_on_Button_Return_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_Restart" to="." method="_on_Button_Restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_Settings" to="." method="_on_Button_Settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_Leave" to="." method="_on_Button_Leave_pressed"]

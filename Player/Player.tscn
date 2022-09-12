@@ -1,0 +1,347 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Src/Fonts/subtitle_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Src/Fonts/icon_settings_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Src/Fonts/Heebo-Bold.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.196078 )
+expand_margin_left = 3.0
+expand_margin_right = 3.0
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0.588235 )
+corner_radius_top_left = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_right = 16.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.388235 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0.588235 )
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+expand_margin_left = 16.0
+expand_margin_right = 5.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.235294, 0.392157, 0.478431, 1 )
+border_width_right = 10
+border_color = Color( 0.156863, 0.258824, 0.313726, 1 )
+
+[sub_resource type="Animation" id=8]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Notification/Panel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 2, 1, 2, 1 ),
+"update": 0,
+"values": [ Vector2( -100, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( -100, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Notification/Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 2, 1, 2, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+far = 150.0
+
+[node name="RayCast" type="RayCast" parent="Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -200 )
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Debug" type="Label" parent="UI"]
+margin_left = 2.95791
+margin_top = 3.11798
+margin_right = 48.9579
+margin_bottom = 17.118
+custom_styles/normal = SubResource( 1 )
+text = "FPS: 60"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MatchInfo" type="Control" parent="UI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -155.0
+margin_right = 155.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 310, 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MatchInfo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 18.0
+margin_right = -1.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 80 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Score" type="Label" parent="UI/MatchInfo/HBoxContainer"]
+margin_top = 26.0
+margin_right = 80.0
+margin_bottom = 53.0
+grow_horizontal = 0
+rect_min_size = Vector2( 80, 0 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+align = 2
+valign = 1
+
+[node name="VSplitContainer2" type="VSplitContainer" parent="UI/MatchInfo/HBoxContainer"]
+margin_left = 84.0
+margin_right = 104.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Label_Time" type="Label" parent="UI/MatchInfo/HBoxContainer"]
+margin_left = 108.0
+margin_top = 27.0
+margin_right = 171.0
+margin_bottom = 52.0
+grow_horizontal = 2
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 3 )
+text = "01:00"
+align = 1
+valign = 1
+
+[node name="VSplitContainer3" type="VSplitContainer" parent="UI/MatchInfo/HBoxContainer"]
+margin_left = 175.0
+margin_right = 195.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Label_Accuracy" type="Label" parent="UI/MatchInfo/HBoxContainer"]
+margin_left = 199.0
+margin_top = 26.0
+margin_right = 279.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 80, 0 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = ExtResource( 2 )
+text = "0%"
+valign = 1
+
+[node name="Crosshair" type="Control" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dot" type="Node2D" parent="UI/Crosshair"]
+
+[node name="Center" type="Line2D" parent="UI/Crosshair/Dot"]
+points = PoolVector2Array( -0.1, 0, 0.1, 0 )
+width = 2.0
+default_color = Color( 0.4, 1, 0.439216, 1 )
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 16
+
+[node name="Lines" type="Node2D" parent="UI/Crosshair"]
+
+[node name="Right" type="Line2D" parent="UI/Crosshair/Lines"]
+points = PoolVector2Array( 5, 0, 10, 0 )
+width = 2.0
+default_color = Color( 0.4, 1, 0.439216, 1 )
+
+[node name="Bottom" type="Line2D" parent="UI/Crosshair/Lines"]
+rotation = 1.57079
+points = PoolVector2Array( 5, 0, 10, 0 )
+width = 2.0
+default_color = Color( 0.4, 1, 0.439216, 1 )
+
+[node name="Left" type="Line2D" parent="UI/Crosshair/Lines"]
+rotation = 3.14159
+points = PoolVector2Array( 5, 0, 10, 0 )
+width = 2.0
+default_color = Color( 0.4, 1, 0.439216, 1 )
+
+[node name="Top" type="Line2D" parent="UI/Crosshair/Lines"]
+rotation = 4.71238
+points = PoolVector2Array( 5, 0, 10, 0 )
+width = 2.0
+default_color = Color( 0.4, 1, 0.439216, 1 )
+
+[node name="StartupInfo" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -375.419, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/StartupInfo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSplitContainer" type="HSplitContainer" parent="UI/StartupInfo/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 258.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/StartupInfo/VBoxContainer"]
+margin_top = 262.0
+margin_right = 1024.0
+margin_bottom = 307.0
+custom_constants/separation = 8
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="UI/StartupInfo/VBoxContainer/HBoxContainer"]
+margin_right = 349.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/StartupInfo/VBoxContainer/HBoxContainer"]
+margin_left = 357.0
+margin_right = 516.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.854902, 0.588235, 0.278431, 1 )
+text = "LEFT CLICK"
+
+[node name="Label2" type="Label" parent="UI/StartupInfo/VBoxContainer/HBoxContainer"]
+margin_left = 524.0
+margin_right = 667.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 6 )
+text = "TO START"
+
+[node name="HSplitContainer4" type="HSplitContainer" parent="UI/StartupInfo/VBoxContainer/HBoxContainer"]
+margin_left = 675.0
+margin_right = 1024.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/StartupInfo/VBoxContainer"]
+margin_top = 311.0
+margin_right = 1024.0
+margin_bottom = 338.0
+custom_constants/separation = 8
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="UI/StartupInfo/VBoxContainer/HBoxContainer2"]
+margin_right = 406.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/StartupInfo/VBoxContainer/HBoxContainer2"]
+margin_left = 414.0
+margin_right = 451.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.854902, 0.588235, 0.278431, 1 )
+text = "ESC"
+
+[node name="Label2" type="Label" parent="UI/StartupInfo/VBoxContainer/HBoxContainer2"]
+margin_left = 459.0
+margin_right = 610.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 2 )
+text = "TO OPEN MENU"
+
+[node name="HSplitContainer4" type="HSplitContainer" parent="UI/StartupInfo/VBoxContainer/HBoxContainer2"]
+margin_left = 618.0
+margin_right = 1024.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="UI/StartupInfo/VBoxContainer"]
+margin_top = 342.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+
+[node name="Notification" type="Control" parent="UI"]
+margin_top = 21.0
+margin_right = 199.0
+margin_bottom = 65.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="UI/Notification"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_right = -100.0
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Notification" type="Label" parent="UI/Notification/Panel"]
+anchor_right = 0.95
+anchor_bottom = 1.0
+margin_right = -0.0500031
+text = "Cheat Activated"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
+anims/Notification = SubResource( 8 )
