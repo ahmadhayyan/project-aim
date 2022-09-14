@@ -9,10 +9,15 @@
 **Project Aim** is a simple and lightweight **aim trainer game** for Windows, Linux, and macOS made with [Godot Game Engine](https://godotengine.org/). Project Aim saves the user's best session score as a reference to see your progress when training your aim. Project Aim has various game settings such as crosshair customization, target customization, and many more.
 
 ## Table of Contents
+- [Tools](#tools)
 - [Features](#features)
 - [Download Releases Version](#download-releases-version)
 - [How to Export](#how-to-export)
 - [Copyright and License](#copyright-and-license)
+
+## Tools
+- Godot v3.3.2
+- GDScript
 
 ## Features
 - Player
@@ -45,6 +50,7 @@ You can download the latest stable releases on [GitHub](https://github.com/ahmad
 
 ## How to Export
 You can export the source code yourself by following the export process from [Godot Docs](https://docs.godotengine.org/en/stable/tutorials/export/exporting_projects.html).
+
 Notes for [Windows](https://docs.godotengine.org/en/stable/tutorials/export/changing_application_icon_for_windows.html).
 
 ## Copyright and License
