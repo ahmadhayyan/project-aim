@@ -8,7 +8,7 @@
 
 **Project Aim** is a simple and lightweight **aim trainer game** for Windows, Linux, and macOS made with Godot Game Engine. Project Aim saves the user's best session score as a reference to see your progress when training your aim. Project Aim has various game settings such as crosshair customization, target customization, and many more.
 
-<img src="https://ahmadhayyan.thedev.id/res/img/project-aim_gameplay.gif" alt="Project Aim">
+<img src="https://img.itch.zone/aW1hZ2UvMTcwMDkyMC8xMDAyODQ5NS5naWY=/347x500/oKVRNP.gif" alt="Project Aim">
 
 ## Table of Contents
 - [Tools](#tools)
