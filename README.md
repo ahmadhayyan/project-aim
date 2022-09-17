@@ -6,7 +6,9 @@
 [![project-aim license](https://img.shields.io/npm/l/tabler.svg?label=license&message=MIT&color=4dc820)](LICENSE.md)
 
 
-**Project Aim** is a simple and lightweight **aim trainer game** for Windows, Linux, and macOS made with [Godot Game Engine](https://godotengine.org/). Project Aim saves the user's best session score as a reference to see your progress when training your aim. Project Aim has various game settings such as crosshair customization, target customization, and many more.
+**Project Aim** is a simple and lightweight **aim trainer game** for Windows, Linux, and macOS made with Godot Game Engine. Project Aim saves the user's best session score as a reference to see your progress when training your aim. Project Aim has various game settings such as crosshair customization, target customization, and many more.
+
+<img src="https://ahmadhayyan.thedev.id/res/img/project-aim_gameplay.gif" alt="Project Aim">
 
 ## Table of Contents
 - [Tools](#tools)
