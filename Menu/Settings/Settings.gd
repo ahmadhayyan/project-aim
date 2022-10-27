@@ -6,6 +6,8 @@ onready var lineEdit_MouseSensitivity := $Control/VBoxContainer/ScrollContainer/
 
 onready var hSlider_TargetSize := $Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/HSlider_TargetSize
 onready var lineEdit_TargetSize := $Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/LineEdit_TargetSize
+onready var hSlider_TargetDistance := $Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9/HBoxContainer/HSlider_TargetDistance
+onready var lineEdit_TargetDistance := $Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9/HBoxContainer/LineEdit_TargetDistance
 onready var colorPicker_Target := $Control/VBoxContainer/ScrollContainer/VBoxContainer/Container_Color2/ColorPickerButton_Target
 
 onready var hSlider_MasterVolume := $Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2/HBoxContainer/HSlider_MasterVolume
@@ -39,6 +41,7 @@ func read_config() -> void:
 	if configfile.load(FILEPATH) == OK:
 		hSlider_MouseSensitivity.value = configfile.get_value("gameplay", "mouse_sensitivity")
 		hSlider_TargetSize.value = configfile.get_value("gameplay", "target_size")
+		hSlider_TargetDistance.value = configfile.get_value("gameplay", "target_distance")
 		colorPicker_Target.color = configfile.get_value("gameplay", "target_color")
 		_on_MenuButton_changed("WindowMode", configfile.get_value("video", "window_mode"))
 		hSlider_MaxFPS.value = configfile.get_value("video", "max_fps")
@@ -62,6 +65,7 @@ func _on_Button_Save_pressed() -> void:
 func save_and_close() -> void:
 	configfile.set_value("gameplay", "mouse_sensitivity", hSlider_MouseSensitivity.value)
 	configfile.set_value("gameplay", "target_size", int(hSlider_TargetSize.value))
+	configfile.set_value("gameplay", "target_distance", int(hSlider_TargetDistance.value))
 	configfile.set_value("gameplay", "target_color", colorPicker_Target.color)
 	configfile.set_value("video", "window_mode", int(OS.window_fullscreen))
 	configfile.set_value("video", "max_fps", int(hSlider_MaxFPS.value))
@@ -94,6 +98,14 @@ func _on_HSlider_TargetSize_value_changed(value) -> void:
 	lineEdit_TargetSize.text = str(value)
 	for i in range(3):
 		root.target_group.get_child(i).set_size(value * 0.1)
+
+func _on_LineEdit_TargetDistance_text_changed(new_text) -> void:
+	hSlider_TargetDistance.value = int(new_text)
+	lineEdit_TargetDistance.caret_position = lineEdit_TargetDistance.max_length
+
+func _on_HSlider_TargetDistance_value_changed(value) -> void:
+	lineEdit_TargetDistance.text = str(value)
+	player.set_distance(value)
 
 func _on_ColorPickerButton_Target_color_changed(color) -> void:
 	for i in range(3):
