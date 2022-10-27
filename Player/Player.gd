@@ -93,3 +93,6 @@ func show_notification(text) -> void:
 	label_notification.text = text
 	animation_Player.play("Notification")
 	Audio.play("Notification")
+
+func set_distance(distance) -> void:
+	translation.z = distance;

@@ -67,9 +67,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 4 )
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Blur" type="TextureRect" parent="."]
 material = SubResource( 1 )
@@ -111,9 +108,6 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="Control/VBoxContainer"]
 margin_right = 610.0
@@ -154,7 +148,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/ScrollContainer"]
 margin_right = 585.0
-margin_bottom = 583.0
+margin_bottom = 614.0
 rect_min_size = Vector2( 585, 450 )
 size_flags_vertical = 3
 custom_constants/separation = 5
@@ -272,10 +266,56 @@ text = "10"
 align = 1
 max_length = 2
 
-[node name="Container_Color2" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="HBoxContainer9" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 104.0
 margin_right = 585.0
-margin_bottom = 128.0
+margin_bottom = 130.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+margin_top = 1.0
+margin_right = 290.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+text = "Target Distance"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+margin_left = 294.0
+margin_right = 585.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider_TargetDistance" type="HSlider" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9/HBoxContainer"]
+margin_top = 4.0
+margin_right = 237.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 30.0
+value = 10.0
+scrollable = false
+
+[node name="LineEdit_TargetDistance" type="LineEdit" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9/HBoxContainer"]
+margin_left = 241.0
+margin_right = 291.0
+margin_bottom = 26.0
+text = "10"
+align = 1
+max_length = 2
+
+[node name="Container_Color2" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 135.0
+margin_right = 585.0
+margin_bottom = 159.0
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer/Container_Color2"]
 margin_right = 290.0
@@ -302,9 +342,9 @@ __meta__ = {
 }
 
 [node name="20_HSplitContainer3" type="HSplitContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 133.0
+margin_top = 164.0
 margin_right = 585.0
-margin_bottom = 153.0
+margin_bottom = 184.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="HSeparator" type="HSeparator" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer/20_HSplitContainer3"]
@@ -313,9 +353,9 @@ margin_right = 585.0
 margin_bottom = 20.0
 
 [node name="Label_Video" type="Label" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 158.0
+margin_top = 189.0
 margin_right = 585.0
-margin_bottom = 185.0
+margin_bottom = 216.0
 custom_fonts/font = ExtResource( 6 )
 text = "Video"
 __meta__ = {
@@ -323,15 +363,15 @@ __meta__ = {
 }
 
 [node name="5_HSplitContainer3" type="HSplitContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 190.0
+margin_top = 221.0
 margin_right = 585.0
-margin_bottom = 195.0
+margin_bottom = 226.0
 rect_min_size = Vector2( 0, 5 )
 
 [node name="Container_WindowMode" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 200.0
+margin_top = 231.0
 margin_right = 585.0
-margin_bottom = 234.0
+margin_bottom = 265.0
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer/Container_WindowMode"]
 margin_top = 5.0
@@ -358,9 +398,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 239.0
+margin_top = 270.0
 margin_right = 585.0
-margin_bottom = 265.0
+margin_bottom = 296.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -403,9 +443,9 @@ align = 1
 max_length = 3
 
 [node name="20_HSplitContainer" type="HSplitContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 270.0
+margin_top = 301.0
 margin_right = 585.0
-margin_bottom = 290.0
+margin_bottom = 321.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="HSeparator" type="HSeparator" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer/20_HSplitContainer"]
@@ -414,9 +454,9 @@ margin_right = 585.0
 margin_bottom = 20.0
 
 [node name="Label_Audio" type="Label" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 295.0
+margin_top = 326.0
 margin_right = 585.0
-margin_bottom = 322.0
+margin_bottom = 353.0
 custom_fonts/font = ExtResource( 6 )
 text = "Audio"
 __meta__ = {
@@ -424,15 +464,15 @@ __meta__ = {
 }
 
 [node name="5_HSplitContainer2" type="HSplitContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 327.0
+margin_top = 358.0
 margin_right = 585.0
-margin_bottom = 332.0
+margin_bottom = 363.0
 rect_min_size = Vector2( 0, 5 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 337.0
+margin_top = 368.0
 margin_right = 585.0
-margin_bottom = 363.0
+margin_bottom = 394.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -475,9 +515,9 @@ align = 1
 max_length = 3
 
 [node name="20_HSplitContainer2" type="HSplitContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 368.0
+margin_top = 399.0
 margin_right = 585.0
-margin_bottom = 388.0
+margin_bottom = 419.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="HSeparator" type="HSeparator" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer/20_HSplitContainer2"]
@@ -486,9 +526,9 @@ margin_right = 585.0
 margin_bottom = 20.0
 
 [node name="Label_Crosshair" type="Label" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 393.0
+margin_top = 424.0
 margin_right = 585.0
-margin_bottom = 420.0
+margin_bottom = 451.0
 custom_fonts/font = ExtResource( 6 )
 text = "Crosshair"
 __meta__ = {
@@ -496,15 +536,15 @@ __meta__ = {
 }
 
 [node name="5_HSplitContainer4" type="HSplitContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 425.0
+margin_top = 456.0
 margin_right = 585.0
-margin_bottom = 430.0
+margin_bottom = 461.0
 rect_min_size = Vector2( 0, 5 )
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 435.0
+margin_top = 466.0
 margin_right = 585.0
-margin_bottom = 461.0
+margin_bottom = 492.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -547,9 +587,9 @@ align = 1
 max_length = 3
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 466.0
+margin_top = 497.0
 margin_right = 585.0
-margin_bottom = 492.0
+margin_bottom = 523.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -592,9 +632,9 @@ align = 1
 max_length = 3
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 497.0
+margin_top = 528.0
 margin_right = 585.0
-margin_bottom = 523.0
+margin_bottom = 554.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -637,9 +677,9 @@ align = 1
 max_length = 3
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 528.0
+margin_top = 559.0
 margin_right = 585.0
-margin_bottom = 554.0
+margin_bottom = 585.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -682,9 +722,9 @@ align = 1
 max_length = 3
 
 [node name="Container_Color" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 559.0
+margin_top = 590.0
 margin_right = 585.0
-margin_bottom = 583.0
+margin_bottom = 614.0
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/ScrollContainer/VBoxContainer/Container_Color"]
 margin_right = 290.0
@@ -728,13 +768,13 @@ __meta__ = {
 margin_right = 60.0
 margin_bottom = 27.0
 rect_min_size = Vector2( 60, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 7 )
 custom_styles/normal = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "ESC"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -744,19 +784,21 @@ __meta__ = {
 margin_left = 64.0
 margin_right = 100.0
 margin_bottom = 27.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 custom_styles/hover = SubResource( 9 )
 custom_styles/pressed = SubResource( 10 )
 custom_styles/focus = SubResource( 11 )
 custom_styles/normal = SubResource( 12 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 text = "Save"
 
 [connection signal="value_changed" from="Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7/HBoxContainer/HSlider_MouseSensitivity" to="." method="_on_HSlider_MouseSensitivity_value_changed"]
 [connection signal="text_changed" from="Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7/HBoxContainer/LineEdit_MouseSensitivity" to="." method="_on_LineEdit_MouseSensitivity_text_changed"]
 [connection signal="value_changed" from="Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/HSlider_TargetSize" to="." method="_on_HSlider_TargetSize_value_changed"]
 [connection signal="text_changed" from="Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/LineEdit_TargetSize" to="." method="_on_LineEdit_TargetSize_text_changed"]
+[connection signal="value_changed" from="Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9/HBoxContainer/HSlider_TargetDistance" to="." method="_on_HSlider_TargetDistance_value_changed"]
+[connection signal="text_changed" from="Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9/HBoxContainer/LineEdit_TargetDistance" to="." method="_on_LineEdit_TargetDistance_text_changed"]
 [connection signal="color_changed" from="Control/VBoxContainer/ScrollContainer/VBoxContainer/Container_Color2/ColorPickerButton_Target" to="." method="_on_ColorPickerButton_Target_color_changed"]
 [connection signal="value_changed" from="Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8/HBoxContainer/HSlider_MaxFPS" to="." method="_on_HSlider_MaxFPS_value_changed"]
 [connection signal="text_changed" from="Control/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8/HBoxContainer/LineEdit_MaxFPS" to="." method="_on_LineEdit_MaxFPS_text_changed"]
