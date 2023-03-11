@@ -38,12 +38,12 @@ environment = SubResource( 2 )
 transform = Transform( 0.892397, 1.32977e-08, -0.451251, 0.297696, 0.751518, 0.588726, 0.339123, -0.659713, 0.670652, 0, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10 )
 
 [node name="TargetGroup" type="Spatial" parent="."]
 
 [node name="Target" parent="TargetGroup" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -25 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0342598, 1.95674, -25.0014 )
 
 [node name="MeshInstance_Floor" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0 )
