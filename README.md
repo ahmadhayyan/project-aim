@@ -2,7 +2,7 @@
 
 # Project Aim
 [![project-aim version](https://badge.fury.io/gh/ahmadhayyan%2Fproject-aim.svg)](../../)
-[![project-aim size](https://badge-size.herokuapp.com/ahmadhayyan/project-aim/main/.build/Project-Aim_0.1.0_win32.exe)](.build/Project-Aim_0.1.0_win32.exe)
+[![project-aim size](https://img.badgesize.io/ahmadhayyan/project-aim/main/.build/Project-Aim_0.1.0_win32.exe)](.build/Project-Aim_0.1.0_win32.exe)
 [![project-aim license](https://img.shields.io/npm/l/tabler.svg?label=license&message=MIT&color=4dc820)](LICENSE.md)
 
 
